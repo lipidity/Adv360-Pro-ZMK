@@ -27,17 +27,17 @@
           bindings = <&kp>, <&kp>;
       };
 
-      lparen: lparen_grave {
+      n9: n9 {
           compatible = "zmk,behavior-mod-morph";
           #binding-cells = <0>;
-          bindings = <&kp LPAR>, <&kp GRAVE>;
+          bindings = <&kp N9>, <&kp CAPS>;
           mods = <(MOD_LSFT|MOD_RSFT)>;
       };
 
-      rparen: rparen_esc {
+      n0: n0 {
           compatible = "zmk,behavior-mod-morph";
           #binding-cells = <0>;
-          bindings = <&kp RPAR>, <&kp ESC>;
+          bindings = <&kp N0>, <&kp C_MUTE>;
           mods = <(MOD_LSFT|MOD_RSFT)>;
       };
     };
@@ -47,20 +47,20 @@
 
     default_layer {
       bindings = <
-        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                           &mo 3 &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &kp BSLH
-        &kp TAB   &kp SQT     &kp COMMA    &kp DOT    &kp P      &kp Y  &none                                                            &none &kp F  &kp G  &kp C     &kp R    &kp L    &kp FSLH
-        &kp BACKSPACE   &kp A     &kp O    &kp E    &kp U      &kp I  &none           &kp LSHFT &kp HOME &kp PG_UP  &kp RSHFT           &none &kp D  &kp H  &kp T     &kp N    &kp S &kp MINUS
-        &kp LGUI &kp SEMI     &kp Q    &kp J    &kp K      &kp X                            &kp END &kp PG_DN                           &kp B  &kp M  &kp W &kp V  &kp Z &kp RGUI
-        &sl 2     &kp LEFT &kp RIGHT &kp LBKT &kp RBKT                &kp RET &kp LCTRL   &kp LALT  &kp RALT &kp RCTRL &kp SPACE              &lparen &rparen  &kp UP &kp DOWN &sl 2
+        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                           &mo 3 &kp N6 &kp N7 &kp N8    &n9   &n0   &kp BSLH
+        &kp TAB   &kp SQT     &kp COMMA    &kp DOT    &kp P      &kp Y  &kp HOME                                                            &kp PG_UP &kp F  &kp G  &kp C     &kp R    &kp L    &kp FSLH
+        &kp ESC   &kp A     &kp O    &kp E    &kp U      &kp I  &kp END           &sk LSHFT &kp LEFT &kp UP  &sk RSHFT           &kp PG_DN &kp D  &kp H  &kp T     &kp N    &kp S &kp MINUS
+        &mt LGUI BACKSPACE &kp SEMI     &kp Q    &kp J    &kp K      &kp X                            &kp RIGHT &kp DOWN                           &kp B  &kp M  &kp W &kp V  &kp Z &kp RGUI
+        &sl 2     &kp GRAVE &kp DEL &kp LBKT &kp RBKT                &kp RET &kp LCTRL   &kp LALT  &kp RALT &kp RCTRL &kp SPACE              &kp LPAR &kp RPAR  &kp DQT &kp K_POWER &sl 2
       >;
     };
     keypad {
       bindings = <
         &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &trans                                                           &mo 3 &kp N6 &kp KP_NUM &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &kp MINUS
-        &kp TAB   &kp SQT     &kp COMMA    &kp DOT    &kp P      &kp Y  &none                                                            &none &kp F  &kp KP_N7  &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &kp BSLH
-        &kp BACKSPACE   &kp A     &kp O    &kp E    &kp U      &kp I  &none           &kp LSHFT &kp HOME &kp PG_UP  &kp RSHFT           &none &kp D  &kp KP_N4  &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &kp SQT
-        &kp LGUI &kp SEMI     &kp Q    &kp J    &kp K      &kp X                            &kp END &kp PG_DN                           &kp B  &kp KP_N1  &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &kp RSHFT
-        &sl 2     &kp LEFT &kp RIGHT &kp LBKT &kp RBKT                &kp RET &kp LCTRL   &kp LALT  &kp RALT &kp RCTRL &kp KP_N0              &lparen     &rparen     &kp KP_DOT    &kp DOWN        &sl 2
+        &kp TAB   &kp SQT     &kp COMMA    &kp DOT    &kp P      &kp Y  &kp HOME                                                            &kp PG_UP &kp F  &kp KP_N7  &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &kp BSLH
+        &kp ESC   &kp A     &kp O    &kp E    &kp U      &kp I  &kp END           &sk LSHFT &kp LEFT &kp UP  &sk RSHFT           &kp PG_DN &kp D  &kp KP_N4  &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &kp SQT
+        &mt LGUI BACKSPACE &kp SEMI     &kp Q    &kp J    &kp K      &kp X                            &kp RIGHT &kp DOWN                           &kp B  &kp KP_N1  &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &kp RGUI
+        &sl 2     &kp GRAVE &kp DEL &kp LBKT &kp RBKT                &kp RET &kp LCTRL   &kp LALT  &kp RALT &kp RCTRL &kp KP_N0              &kp LPAR     &kp RPAR     &kp KP_DOT    &kp DOWN        &sl 2
       >;
     };
     fn {
